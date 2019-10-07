@@ -60,3 +60,19 @@ TId 教师编号 Tname 教师姓名
 - 成绩表 SC
 
 SId 学生编号 CId 课程编号 score 分数
+
+
+## Mysql Docker 使用
+```shell
+docker pull mysql:5.6
+docker run --name mysqldb -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:tag
+docker exec -it mysqldb bash
+# 传本地文件到docker
+docker cp create.sql 8c06:/   # 8c06 换成对应的container的ID
+mysql -uroot -p
+show DATABASES;
+source /create.sql
+# docker stop xxx  xxx 为container的编号
+# docker 重启
+docker restart xxx
+```
