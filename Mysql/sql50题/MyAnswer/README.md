@@ -18,3 +18,27 @@ SELECT
 ```
 - 参考
     - [图解SQL中各种JOIN(知乎)]
+
+2. 查询平均成绩大于60分的同学的学号和平均成绩；
+```sql
+-- 查询结果为学号和平均成绩
+SELECT sid,AVG(score) AS AC 
+FROM SC
+GROUP BY sid 
+HAVING score > 60;
+-- 问题
+-- 1. groupy by 和 order by 的区别
+-- 1.1 GROUP BY 与聚集函数一起使用
+-- 2. HAVING 和 WHERE 的区别
+-- 2.1 过滤分组使用的是HAVING
+-- 知识点
+-- 1.聚集函数
+-- 1.1 SUM(),AVG(),COUNT(),MAX(),MIN()
+-- 2.分组数据
+-- 2.1 goupy by 分组计算字段
+-- 2.2 HAVING 过滤分组数据
+```
+3. 查询所有同学的学号、姓名、选课数、总成绩
+```sql
+
+```

@@ -17,4 +17,5 @@
 
 ## 参考
 - [路线](https://www.zhihu.com/question/34840297)
+- [SQL W3C tutorial](https://www.w3schools.com/sql/default.asp)
 - [mysql 必知必会环境补充](https://zhuanlan.zhihu.com/p/58070970)

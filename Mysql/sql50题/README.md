@@ -70,8 +70,11 @@ docker exec -it mysqldb bash
 # 传本地文件到docker
 docker cp create.sql 8c06:/   # 8c06 换成对应的container的ID
 mysql -uroot -p
+CREATE DATABASE sql50;
 show DATABASES;
+use sql50;
 source /create.sql
+show tables;
 # docker stop xxx  xxx 为container的编号
 # docker 重启
 docker restart xxx
