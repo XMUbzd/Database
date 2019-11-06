@@ -40,5 +40,27 @@ HAVING score > 60;
 ```
 3. 查询所有同学的学号、姓名、选课数、总成绩
 ```sql
-
+-- 分析
+-- sid,sname,count(sid),SUM(score) goupy by 
+-- 汇总数据，分组数据
+-- 联结表
+-- 
+SELECT Student.sid AS sd,sname,COUNT(Student.sid) AS cc, SUM(score) AS sc
+FROM Student,SC
+WHERE Student.sid = SC.sid
+group by sd;
+-- 出现问题
+-- Column 'sid' in field list is ambiguous
+-- 解决：查询中的sid 不知道指的是哪一个 应该加具体表的名称
+-- 他人的答案
+SELECT Student.sid,Student.sname,COUNT(DISTINCT cid),SUM(DISTINCT score)
+FROM Student LEFT JOIN SC
+ON Student.sid = SC.sid
+GROUP BY Student.sid,Student.sid
+-- 分析
+-- 他使用了LEFT JOIN ON
+-- 问题
+-- 为什么使用DISTINCT
+-- 我的方法 默认用户每条记录都是独立的课程，看sid 出现几次就是相当于选了几次课
+-- 道理来说这个地方应该用 DISTINCT cid
 ```
