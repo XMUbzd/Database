@@ -64,3 +64,32 @@ GROUP BY Student.sid,Student.sid
 -- 我的方法 默认用户每条记录都是独立的课程，看sid 出现几次就是相当于选了几次课
 -- 道理来说这个地方应该用 DISTINCT cid
 ```
+
+4. 查询姓“李”的老师的个数
+```sql
+-- 分析
+-- 这道题简单但是terminal中如何输入中文字符？
+-- 知识点
+-- 使用通配符进行数据过滤 WHERE LIKE
+```
+
+5. 
+
+
+6. 查询同时学过课程1和课程2的同学的学号、姓名
+```sql
+-- and or 运算符 在where语句中
+SELECT A.sid,sname 
+FROM (SELECT * FROM SC WHERE cid=01 or cid=02) AS A,Student
+WHERE A.sid = Student.sid
+-- 问题
+-- 搞不明白联结的作用时什么，就只是为了显示更全一些？
+-- 正确答案
+-- In操作符号，允许where子句中规定多个值
+```
+
+8. 查询 课程编号1的成绩 比 课程编号2的成绩 高的所有同学的学号、姓名
+```sql
+SELECT sid, sname
+FROM 
+```
